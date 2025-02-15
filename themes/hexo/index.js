@@ -122,7 +122,7 @@ const LayoutBase = props => {
               ' w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'
             }>
             <div
-              className={`${className || ''} w-full ${fullWidth ? '' : 'max-w-4xl'} h-full overflow-hidden`}>
+              className={`${className || ''} w-full ${fullWidth ? '' : 'max-w-4xl'} h-full overflow-hidden pt-8`}>
               <Transition
                 show={!onLoading}
                 appear={true}
@@ -267,19 +267,18 @@ const LayoutSlug = props => {
   useEffect(() => {
     // 404
     if (!post) {
-      setTimeout(
-        () => {
-          if (isBrowser) {
-            const article = document.querySelector('#article-wrapper #notion-article')
-            if (!article) {
-              router.push('/404').then(() => {
-                console.warn('找不到页面', router.asPath)
-              })
-            }
+      setTimeout(() => {
+        if (isBrowser) {
+          const article = document.querySelector(
+            '#article-wrapper #notion-article'
+          )
+          if (!article) {
+            router.push('/404').then(() => {
+              console.warn('找不到页面', router.asPath)
+            })
           }
-        },
-        waiting404
-      )
+        }
+      }, waiting404)
     }
   }, [post])
   return (
@@ -334,7 +333,9 @@ const Layout404 = props => {
     // 延时3秒如果加载失败就返回首页
     setTimeout(() => {
       if (isBrowser) {
-        const article = document.querySelector('#article-wrapper #notion-article')
+        const article = document.querySelector(
+          '#article-wrapper #notion-article'
+        )
         if (!article) {
           router.push('/').then(() => {
             // console.log('找不到页面', router.asPath)
