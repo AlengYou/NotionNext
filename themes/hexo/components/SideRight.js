@@ -57,7 +57,7 @@ export default function SideRight(props) {
     <div
       id='sideRight'
       className={` lg:w-80 lg:pt-8 ${post ? 'lg:pt-0' : 'lg:pt-4'}`}>
-      <div className='sticky space-y-4'>
+      <div className='sticky top-8 space-y-4'>
         <InfoCard {...props} />
         {siteConfig('HEXO_WIDGET_ANALYTICS', null, CONFIG) && (
           <AnalyticsCard {...props} />
@@ -100,7 +100,7 @@ export default function SideRight(props) {
 
         {rightAreaSlot}
         <FaceBookPage />
-        {/* <Live2D /> */}
+        <Live2D />
       </div>
     </div>
   )
