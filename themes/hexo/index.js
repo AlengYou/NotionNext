@@ -122,7 +122,7 @@ const LayoutBase = props => {
               ' w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'
             }>
             <div
-              className={`${className || ''} w-full ${fullWidth ? '' : 'max-w-4xl'} h-full overflow-hidden pt-8`}>
+              className={`${className || ''} w-full ${fullWidth ? '' : 'max-w-4xl'} h-full overflow-hidden `}>
               <Transition
                 show={!onLoading}
                 appear={true}
@@ -282,7 +282,7 @@ const LayoutSlug = props => {
     }
   }, [post])
   return (
-    <>
+    <div className='pt-8'>
       <div className='w-full lg:hover:shadow lg:border rounded-t-xl lg:rounded-xl lg:px-2 lg:py-4 bg-white dark:bg-hexo-black-gray dark:border-black article'>
         {lock && <ArticleLock validPassword={validPassword} />}
 
@@ -318,7 +318,7 @@ const LayoutSlug = props => {
           </div>
         )}
       </div>
-    </>
+    </div>
   )
 }
 
