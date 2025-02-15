@@ -1,4 +1,3 @@
-import Live2D from '@/components/Live2D'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import dynamic from 'next/dynamic'
@@ -56,7 +55,7 @@ export default function SideRight(props) {
   return (
     <div
       id='sideRight'
-      className={` lg:w-80 lg:pt-8 ${post ? 'lg:pt-0' : 'lg:pt-4'}`}>
+      className={` lg:w-80 lg: ${post ? 'lg:pt-0' : 'lg:pt-4'}`}>
       <div className='sticky top-8 space-y-4'>
         <InfoCard {...props} />
         {siteConfig('HEXO_WIDGET_ANALYTICS', null, CONFIG) && (
@@ -100,7 +99,6 @@ export default function SideRight(props) {
 
         {rightAreaSlot}
         <FaceBookPage />
-        <Live2D />
       </div>
     </div>
   )
