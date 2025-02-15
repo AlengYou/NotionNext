@@ -63,6 +63,12 @@ export default function SideRight(props) {
           <AnalyticsCard {...props} />
         )}
 
+        {post && post.toc && post.toc.length > 1 && (
+          <Card>
+            <Catalog toc={post.toc} />
+          </Card>
+        )}
+
         {showCategory && (
           <Card>
             <div className='ml-2 mb-1 '>
@@ -94,11 +100,6 @@ export default function SideRight(props) {
 
         {rightAreaSlot}
         <FaceBookPage />
-        {post && post.toc && post.toc.length > 1 && (
-          <Card>
-            <Catalog toc={post.toc} />
-          </Card>
-        )}
         {/* <Live2D /> */}
       </div>
     </div>
