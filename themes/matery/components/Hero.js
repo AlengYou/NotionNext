@@ -18,30 +18,30 @@ const Hero = props => {
   const { siteInfo } = props
   const { locale } = useGlobal()
   const GREETING_WORDS = siteConfig('GREETING_WORDS').split(',')
-  useEffect(() => {
-    updateHeaderHeight()
-    if (!typed && window && document.getElementById('typed')) {
-      loadExternalResource('/js/typed.min.js', 'js').then(() => {
-        if (window.Typed) {
-          changeType(
-            new window.Typed('#typed', {
-              strings: GREETING_WORDS,
-              typeSpeed: 200,
-              backSpeed: 100,
-              backDelay: 400,
-              showCursor: true,
-              smartBackspace: true
-            })
-          )
-        }
-      })
-    }
+  // useEffect(() => {
+  //   updateHeaderHeight()
+  //   if (!typed && window && document.getElementById('typed')) {
+  //     loadExternalResource('/js/typed.min.js', 'js').then(() => {
+  //       if (window.Typed) {
+  //         changeType(
+  //           new window.Typed('#typed', {
+  //             strings: GREETING_WORDS,
+  //             typeSpeed: 200,
+  //             backSpeed: 100,
+  //             backDelay: 400,
+  //             showCursor: true,
+  //             smartBackspace: true
+  //           })
+  //         )
+  //       }
+  //     })
+  //   }
 
-    window.addEventListener('resize', updateHeaderHeight)
-    return () => {
-      window.removeEventListener('resize', updateHeaderHeight)
-    }
-  }, [])
+  //   window.addEventListener('resize', updateHeaderHeight)
+  //   return () => {
+  //     window.removeEventListener('resize', updateHeaderHeight)
+  //   }
+  // }, [])
 
   function updateHeaderHeight() {
     requestAnimationFrame(() => {
