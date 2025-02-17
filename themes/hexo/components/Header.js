@@ -9,7 +9,7 @@ import ButtonRandomPost from './ButtonRandomPost'
 import CategoryGroup from './CategoryGroup'
 import Logo from './Logo'
 import { MenuListTop } from './MenuListTop'
-import SearchButton from './SearchButton'
+// import SearchButton from './SearchButton'
 import SearchDrawer from './SearchDrawer'
 import SideBar from './SideBar'
 import SideBarDrawer from './SideBarDrawer'
@@ -29,7 +29,7 @@ const Header = props => {
   const router = useRouter()
   const [isOpen, changeShow] = useState(false)
   const showSearchButton = siteConfig('HEXO_MENU_SEARCH', false, CONFIG)
-  const showRandomButton = siteConfig('HEXO_MENU_RANDOM', false, CONFIG)
+  // const showRandomButton = siteConfig('HEXO_MENU_RANDOM', false, CONFIG)
 
   const toggleMenuOpen = () => {
     changeShow(!isOpen)
@@ -173,7 +173,7 @@ const Header = props => {
                 <i className='fas fa-bars' />
               )}
             </div>
-            {showSearchButton && <SearchButton />}
+            {/* {showSearchButton && <SearchButton />} */}
             {showRandomButton && <ButtonRandomPost {...props} />}
           </div>
         </div>
