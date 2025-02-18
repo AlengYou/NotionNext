@@ -34,6 +34,15 @@ const Footer = ({ title }) => {
         <h1 className='text-xs pt-4 text-light-400 dark:text-gray-400'>
           {title} {siteConfig('BIO') && <>|</>} {siteConfig('BIO')}
         </h1>
+        <span className='text-xs '>
+          Powered by{' '}
+          <a
+            href='https://github.com/tangly1024/NotionNext'
+            className='underline dark:text-gray-300'>
+            NotionNext {siteConfig('VERSION')}
+          </a>
+          .
+        </span>
       </span>
       <br />
     </footer>
